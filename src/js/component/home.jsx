@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 //create your first component
 const Home = () => {
+	const [counter, setCounter] = useState(0)
+	useEffect(() => {
+		setCounter((prevCounter) => prevCounter + 1)
+	}, [])
   return (
     <div className="page">
       <div className="container justify-content-flex">
@@ -12,7 +16,9 @@ const Home = () => {
             </div>
           </div>
           <div className="col">
-            <div className="onehunthous">1</div>
+            <div className="onehunthous">
+				{counter}
+			</div>
           </div>
           <div className="col">
             <div className="tenthous">1</div>
